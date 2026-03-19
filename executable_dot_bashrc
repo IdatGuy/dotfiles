@@ -1,0 +1,28 @@
+# ~/.bashrc
+clear && myfetch -d -c 8 -C " █"
+eval "$(starship init bash)"
+[[ $- != *i* ]] && return
+alias lsd='eza --icons'
+alias ll='ls -lAh --color=auto'
+alias ..='cd ..'
+alias ...='cd ...'
+alias yeet='yay -Rns'
+alias yup='yay -Syu'
+alias cleanup='yay -Qdtq | yay -Rns'
+alias grep='grep --color=auto'
+alias pool='clear && asciiquarium'
+alias c='clear'
+alias bye='sudo shutdown -h now'
+alias loop='sudo reboot'
+alias h='dbus-launch Hyprland'
+alias fonts='fc-list -f "%{family}\n"'
+alias tasks='btm'
+alias Docs="cd ~/Documents && nvim"
+alias Settings="cd ~/.config/hypr && nvim"
+alias spot="ncspot"
+alias untar="tar -xf"
+alias n="nvim"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+PS1='[\u@\h \W]\$ '
+export PATH="$HOME/.local/bin:$PATH"
