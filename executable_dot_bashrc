@@ -22,6 +22,17 @@ alias Settings="cd ~/.config/hypr && nvim"
 alias spot="ncspot"
 alias untar="tar -xf"
 alias n="nvim"
+alias Apps='yay -Qe'
+
+chezpush() {
+    chezmoi re-add
+    cd ~/.local/share/chezmoi
+    git add .
+    git commit -m "${1:-dotfiles update}"
+    git push
+    cd ~
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 PS1='[\u@\h \W]\$ '
