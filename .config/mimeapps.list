@@ -1,0 +1,6 @@
+[Added Associations]
+application/x-shellscript=micro-4.desktop;/home/odin/.local/share/applications/micro-3.desktop;
+
+[Default Applications]
+application/x-shellscript=micro-4.desktop;
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop

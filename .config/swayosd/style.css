@@ -1,0 +1,30 @@
+@define-color base    #0f2024;
+@define-color surface #85523a;
+@define-color accent  #7f6f56;
+@define-color text    #929a9c;
+
+window#osd {
+    background: transparent;
+}
+
+#osd {
+    background-color: alpha(@base, 0.85);
+    border-radius: 12px;
+    border: 1px solid alpha(@accent, 0.4);
+    color: @text;
+    padding: 12px;
+}
+
+progressbar trough {
+    background-color: alpha(@surface, 0.6);
+    border-radius: 6px;
+}
+
+progressbar progress {
+    background-color: @accent;
+    border-radius: 6px;
+}
+
+image, label {
+    color: @text;
+}

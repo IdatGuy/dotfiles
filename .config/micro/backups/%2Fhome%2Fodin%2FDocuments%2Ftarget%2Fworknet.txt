@@ -1,0 +1,1452 @@
+# Nmap 7.99 scan initiated Tue Apr  7 17:27:54 2026 as: nmap -A -Pn -oN worknet.txt 10.1.10.0/24
+Nmap scan report for Docsis-Gateway (10.1.10.1)
+Host is up (0.0042s latency).
+Not shown: 990 closed tcp ports (reset)
+PORT     STATE    SERVICE     VERSION
+22/tcp   filtered ssh
+23/tcp   filtered telnet
+53/tcp   open     domain      dnsmasq 2.83
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.83
+80/tcp   open     http        Xfinity Broadband Router Server
+| fingerprint-strings: 
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Content-type: text/html
+|     X-robots-tag: noindex,nofollow
+|     X-Frame-Options: deny
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Strict-Transport-Security: max-age=15768000; includeSubdomains
+|     Pragma: no-cache
+|     Cache-Control: no-store, no-cache, must-revalidate
+|     Content-Security-Policy: default-src 'self' ; style-src 'self' ; frame-src 'self' ; font-src 'self' ; form-action 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self'; connect-src 'self'; object-src 'none'; media-src 'none'; script-nonce 'none'; plugin-types 'none'; reflected-xss 'none'; report-uri 'none';
+|     Content-Length: 8167
+|     Connection: close
+|     Date: Wed, 07 Jan 1970 07:16:25 GMT
+|     Server: Xfinity Broadband Router Server
+|     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+|_    <html xmlns="http://www.w3.org/1999/xhtml"
+|_http-title: Site doesn't have a title (text/html).
+|_http-server-header: Xfinity Broadband Router Server
+111/tcp  filtered rpcbind
+443/tcp  open     ssl/https   Xfinity Broadband Router Server
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=myrouter.io/organizationName=Comcast Corporation/stateOrProvinceName=Pennsylvania/countryName=US
+| Subject Alternative Name: DNS:myrouter.io
+| Not valid before: 2024-07-15T00:00:00
+|_Not valid after:  2025-07-15T23:59:59
+| tls-alpn: 
+|   http/1.0
+|_  http/1.1
+|_http-server-header: Xfinity Broadband Router Server
+| fingerprint-strings: 
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Content-type: text/html
+|     X-robots-tag: noindex,nofollow
+|     X-Frame-Options: deny
+|     X-XSS-Protection: 1; mode=block
+|     X-Content-Type-Options: nosniff
+|     Strict-Transport-Security: max-age=15768000; includeSubdomains
+|     Pragma: no-cache
+|     Cache-Control: no-store, no-cache, must-revalidate
+|     Content-Security-Policy: default-src 'self' ; style-src 'self' ; frame-src 'self' ; font-src 'self' ; form-action 'self' ; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self'; connect-src 'self'; object-src 'none'; media-src 'none'; script-nonce 'none'; plugin-types 'none'; reflected-xss 'none'; report-uri 'none';
+|     Content-Length: 8167
+|     Connection: close
+|     Date: Wed, 07 Jan 1970 07:16:31 GMT
+|     Server: Xfinity Broadband Router Server
+|     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+|_    <html xmlns="http://www.w3.org/1999/xhtml"
+|_http-title: Site doesn't have a title (text/html).
+2602/tcp open     zebra       Quagga routing software
+8080/tcp filtered http-proxy
+8181/tcp filtered intermapper
+9000/tcp filtered cslistener
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.99%I=7%D=4/7%Time=69D5A1DB%P=x86_64-pc-linux-gnu%r(GetRe
+SF:quest,22D2,"HTTP/1\.0\x20200\x20OK\r\nContent-type:\x20text/html\r\nX-r
+SF:obots-tag:\x20noindex,nofollow\r\nX-Frame-Options:\x20deny\r\nX-XSS-Pro
+SF:tection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosniff\r\nS
+SF:trict-Transport-Security:\x20max-age=15768000;\x20includeSubdomains\r\n
+SF:Pragma:\x20no-cache\r\nCache-Control:\x20no-store,\x20no-cache,\x20must
+SF:-revalidate\r\nContent-Security-Policy:\x20default-src\x20'self'\x20;\x
+SF:20style-src\x20'self'\x20;\x20frame-src\x20'self'\x20;\x20font-src\x20'
+SF:self'\x20;\x20form-action\x20'self'\x20;\x20script-src\x20'self'\x20'un
+SF:safe-inline'\x20'unsafe-eval';\x20img-src\x20'self';\x20connect-src\x20
+SF:'self';\x20object-src\x20'none';\x20media-src\x20'none';\x20script-nonc
+SF:e\x20'none';\x20plugin-types\x20'none';\x20reflected-xss\x20'none';\x20
+SF:report-uri\x20'none';\r\nContent-Length:\x208167\r\nConnection:\x20clos
+SF:e\r\nDate:\x20Wed,\x2007\x20Jan\x201970\x2007:16:25\x20GMT\r\nServer:\x
+SF:20Xfinity\x20Broadband\x20Router\x20Server\r\n\r\n\n<!DOCTYPE\x20html\x
+SF:20PUBLIC\x20\"-//W3C//DTD\x20XHTML\x201\.0\x20Strict//EN\"\x20\"http://
+SF:www\.w3\.org/TR/xhtml1/DTD/xhtml1-strict\.dtd\">\n<html\x20xmlns=\"http
+SF:://www\.w3\.org/1999/xhtml\"")%r(HTTPOptions,22D2,"HTTP/1\.0\x20200\x20
+SF:OK\r\nContent-type:\x20text/html\r\nX-robots-tag:\x20noindex,nofollow\r
+SF:\nX-Frame-Options:\x20deny\r\nX-XSS-Protection:\x201;\x20mode=block\r\n
+SF:X-Content-Type-Options:\x20nosniff\r\nStrict-Transport-Security:\x20max
+SF:-age=15768000;\x20includeSubdomains\r\nPragma:\x20no-cache\r\nCache-Con
+SF:trol:\x20no-store,\x20no-cache,\x20must-revalidate\r\nContent-Security-
+SF:Policy:\x20default-src\x20'self'\x20;\x20style-src\x20'self'\x20;\x20fr
+SF:ame-src\x20'self'\x20;\x20font-src\x20'self'\x20;\x20form-action\x20'se
+SF:lf'\x20;\x20script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-eval';\x
+SF:20img-src\x20'self';\x20connect-src\x20'self';\x20object-src\x20'none';
+SF:\x20media-src\x20'none';\x20script-nonce\x20'none';\x20plugin-types\x20
+SF:'none';\x20reflected-xss\x20'none';\x20report-uri\x20'none';\r\nContent
+SF:-Length:\x208167\r\nConnection:\x20close\r\nDate:\x20Wed,\x2007\x20Jan\
+SF:x201970\x2007:16:25\x20GMT\r\nServer:\x20Xfinity\x20Broadband\x20Router
+SF:\x20Server\r\n\r\n\n<!DOCTYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD\x20XHT
+SF:ML\x201\.0\x20Strict//EN\"\x20\"http://www\.w3\.org/TR/xhtml1/DTD/xhtml
+SF:1-strict\.dtd\">\n<html\x20xmlns=\"http://www\.w3\.org/1999/xhtml\"");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.99%T=SSL%I=7%D=4/7%Time=69D5A1E1%P=x86_64-pc-linux-gnu%
+SF:r(GetRequest,22D2,"HTTP/1\.0\x20200\x20OK\r\nContent-type:\x20text/html
+SF:\r\nX-robots-tag:\x20noindex,nofollow\r\nX-Frame-Options:\x20deny\r\nX-
+SF:XSS-Protection:\x201;\x20mode=block\r\nX-Content-Type-Options:\x20nosni
+SF:ff\r\nStrict-Transport-Security:\x20max-age=15768000;\x20includeSubdoma
+SF:ins\r\nPragma:\x20no-cache\r\nCache-Control:\x20no-store,\x20no-cache,\
+SF:x20must-revalidate\r\nContent-Security-Policy:\x20default-src\x20'self'
+SF:\x20;\x20style-src\x20'self'\x20;\x20frame-src\x20'self'\x20;\x20font-s
+SF:rc\x20'self'\x20;\x20form-action\x20'self'\x20;\x20script-src\x20'self'
+SF:\x20'unsafe-inline'\x20'unsafe-eval';\x20img-src\x20'self';\x20connect-
+SF:src\x20'self';\x20object-src\x20'none';\x20media-src\x20'none';\x20scri
+SF:pt-nonce\x20'none';\x20plugin-types\x20'none';\x20reflected-xss\x20'non
+SF:e';\x20report-uri\x20'none';\r\nContent-Length:\x208167\r\nConnection:\
+SF:x20close\r\nDate:\x20Wed,\x2007\x20Jan\x201970\x2007:16:31\x20GMT\r\nSe
+SF:rver:\x20Xfinity\x20Broadband\x20Router\x20Server\r\n\r\n\n<!DOCTYPE\x2
+SF:0html\x20PUBLIC\x20\"-//W3C//DTD\x20XHTML\x201\.0\x20Strict//EN\"\x20\"
+SF:http://www\.w3\.org/TR/xhtml1/DTD/xhtml1-strict\.dtd\">\n<html\x20xmlns
+SF:=\"http://www\.w3\.org/1999/xhtml\"")%r(HTTPOptions,22D2,"HTTP/1\.0\x20
+SF:200\x20OK\r\nContent-type:\x20text/html\r\nX-robots-tag:\x20noindex,nof
+SF:ollow\r\nX-Frame-Options:\x20deny\r\nX-XSS-Protection:\x201;\x20mode=bl
+SF:ock\r\nX-Content-Type-Options:\x20nosniff\r\nStrict-Transport-Security:
+SF:\x20max-age=15768000;\x20includeSubdomains\r\nPragma:\x20no-cache\r\nCa
+SF:che-Control:\x20no-store,\x20no-cache,\x20must-revalidate\r\nContent-Se
+SF:curity-Policy:\x20default-src\x20'self'\x20;\x20style-src\x20'self'\x20
+SF:;\x20frame-src\x20'self'\x20;\x20font-src\x20'self'\x20;\x20form-action
+SF:\x20'self'\x20;\x20script-src\x20'self'\x20'unsafe-inline'\x20'unsafe-e
+SF:val';\x20img-src\x20'self';\x20connect-src\x20'self';\x20object-src\x20
+SF:'none';\x20media-src\x20'none';\x20script-nonce\x20'none';\x20plugin-ty
+SF:pes\x20'none';\x20reflected-xss\x20'none';\x20report-uri\x20'none';\r\n
+SF:Content-Length:\x208167\r\nConnection:\x20close\r\nDate:\x20Wed,\x2007\
+SF:x20Jan\x201970\x2007:16:31\x20GMT\r\nServer:\x20Xfinity\x20Broadband\x2
+SF:0Router\x20Server\r\n\r\n\n<!DOCTYPE\x20html\x20PUBLIC\x20\"-//W3C//DTD
+SF:\x20XHTML\x201\.0\x20Strict//EN\"\x20\"http://www\.w3\.org/TR/xhtml1/DT
+SF:D/xhtml1-strict\.dtd\">\n<html\x20xmlns=\"http://www\.w3\.org/1999/xhtm
+SF:l\"");
+MAC Address: 40:0F:C1:3E:08:79 (Vantiva USA)
+Device type: general purpose|router
+Running: Linux 5.X, MikroTik RouterOS 7.X
+OS CPE: cpe:/o:linux:linux_kernel:5 cpe:/o:mikrotik:routeros:7 cpe:/o:linux:linux_kernel:5.6.3
+OS details: Linux 5.0 - 5.14, MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3)
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   4.23 ms Docsis-Gateway (10.1.10.1)
+
+Nmap scan report for TIZEN (10.1.10.10)
+Host is up (0.0044s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE             VERSION
+4000/tcp open  remoteanything?
+| fingerprint-strings: 
+|   GenericLines, GetRequest, NoMachine, RTSPRequest: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/html
+|     Connection: close
+|     Date: Wed, 08 Apr 2026 00:31:24 GMT
+|     Content-Length: 94
+|     <HTML><HEAD>
+|     <TITLE>400 Bad Request</TITLE>
+|     </HEAD><BODY>
+|     <H1>Bad Request</H1>
+|     </BODY></HTML>
+|   HTTPOptions: 
+|     HTTP/1.1 501 Not Implemented
+|     Content-Type: text/html
+|     Connection: close
+|     Date: Wed, 08 Apr 2026 00:31:24 GMT
+|     Content-Length: 102
+|     <HTML><HEAD>
+|     <TITLE>501 Not Implemented</TITLE>
+|     </HEAD><BODY>
+|     <H1>Not Implemented</H1>
+|     </BODY></HTML>
+|   Help, SSLSessionReq: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/html
+|     Connection: close
+|     Date: Wed, 08 Apr 2026 00:31:39 GMT
+|     Content-Length: 94
+|     <HTML><HEAD>
+|     <TITLE>400 Bad Request</TITLE>
+|     </HEAD><BODY>
+|     <H1>Bad Request</H1>
+|_    </BODY></HTML>
+8001/tcp open  vcom-tunnel?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, Kerberos, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|     HTTP/1.0 403 Forbidden
+|     content-type: text/html
+|     content-length: 38
+|     <html><body><h1>403</h1></body></html>
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     content-type: application/json; charset=utf-8
+|     content-length: 29
+|     <html><body>404</body></html>
+|   GetRequest: 
+|     HTTP/1.0 401 Unauthorized
+|     content-length: 29
+|     <html><body>401</body></html>
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.0 200 OK
+|     content-type: application/json; charset=utf-8
+|     access-control-allow-headers: content-type
+|_    content-length: 3
+8002/tcp open  ssl/teradataordbms?
+| ssl-cert: Subject: commonName=SmartViewSDK/organizationName=SmartViewSDK/countryName=KR
+| Subject Alternative Name: IP Address:127.0.0.1
+| Not valid before: 2016-09-21T08:36:31
+|_Not valid after:  2036-09-21T08:36:31
+|_ssl-date: TLS randomness does not represent time
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, Kerberos, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     HTTP/1.0 403 Forbidden
+|     content-type: text/html
+|     content-length: 38
+|     <html><body><h1>403</h1></body></html>
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     content-type: application/json; charset=utf-8
+|     content-length: 29
+|     <html><body>404</body></html>
+|   GetRequest: 
+|     HTTP/1.0 401 Unauthorized
+|     content-length: 29
+|     <html><body>401</body></html>
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.0 200 OK
+|     content-type: application/json; charset=utf-8
+|     access-control-allow-headers: content-type
+|_    content-length: 3
+8080/tcp open  http                lighttpd
+|_http-server-header: WebServer
+|_http-title: 404 - Not Found
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port4000-TCP:V=7.99%I=7%D=4/7%Time=69D5A1DB%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,DF,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text
+SF:/html\r\nConnection:\x20close\r\nDate:\x20Wed,\x2008\x20Apr\x202026\x20
+SF:00:31:24\x20GMT\r\nContent-Length:\x2094\r\n\r\n<HTML><HEAD>\n<TITLE>40
+SF:0\x20Bad\x20Request</TITLE>\n</HEAD><BODY>\n<H1>Bad\x20Request</H1>\n</
+SF:BODY></HTML>\n")%r(NoMachine,DF,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n
+SF:Content-Type:\x20text/html\r\nConnection:\x20close\r\nDate:\x20Wed,\x20
+SF:08\x20Apr\x202026\x2000:31:24\x20GMT\r\nContent-Length:\x2094\r\n\r\n<H
+SF:TML><HEAD>\n<TITLE>400\x20Bad\x20Request</TITLE>\n</HEAD><BODY>\n<H1>Ba
+SF:d\x20Request</H1>\n</BODY></HTML>\n")%r(GenericLines,DF,"HTTP/1\.1\x204
+SF:00\x20Bad\x20Request\r\nContent-Type:\x20text/html\r\nConnection:\x20cl
+SF:ose\r\nDate:\x20Wed,\x2008\x20Apr\x202026\x2000:31:24\x20GMT\r\nContent
+SF:-Length:\x2094\r\n\r\n<HTML><HEAD>\n<TITLE>400\x20Bad\x20Request</TITLE
+SF:>\n</HEAD><BODY>\n<H1>Bad\x20Request</H1>\n</BODY></HTML>\n")%r(HTTPOpt
+SF:ions,EC,"HTTP/1\.1\x20501\x20Not\x20Implemented\r\nContent-Type:\x20tex
+SF:t/html\r\nConnection:\x20close\r\nDate:\x20Wed,\x2008\x20Apr\x202026\x2
+SF:000:31:24\x20GMT\r\nContent-Length:\x20102\r\n\r\n<HTML><HEAD>\n<TITLE>
+SF:501\x20Not\x20Implemented</TITLE>\n</HEAD><BODY>\n<H1>Not\x20Implemente
+SF:d</H1>\n</BODY></HTML>\n")%r(RTSPRequest,DF,"HTTP/1\.1\x20400\x20Bad\x2
+SF:0Request\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\nDate:
+SF:\x20Wed,\x2008\x20Apr\x202026\x2000:31:24\x20GMT\r\nContent-Length:\x20
+SF:94\r\n\r\n<HTML><HEAD>\n<TITLE>400\x20Bad\x20Request</TITLE>\n</HEAD><B
+SF:ODY>\n<H1>Bad\x20Request</H1>\n</BODY></HTML>\n")%r(Help,DF,"HTTP/1\.1\
+SF:x20400\x20Bad\x20Request\r\nContent-Type:\x20text/html\r\nConnection:\x
+SF:20close\r\nDate:\x20Wed,\x2008\x20Apr\x202026\x2000:31:39\x20GMT\r\nCon
+SF:tent-Length:\x2094\r\n\r\n<HTML><HEAD>\n<TITLE>400\x20Bad\x20Request</T
+SF:ITLE>\n</HEAD><BODY>\n<H1>Bad\x20Request</H1>\n</BODY></HTML>\n")%r(SSL
+SF:SessionReq,DF,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/html\r\nConnection:\x20close\r\nDate:\x20Wed,\x2008\x20Apr\x202026\
+SF:x2000:31:39\x20GMT\r\nContent-Length:\x2094\r\n\r\n<HTML><HEAD>\n<TITLE
+SF:>400\x20Bad\x20Request</TITLE>\n</HEAD><BODY>\n<H1>Bad\x20Request</H1>\
+SF:n</BODY></HTML>\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8001-TCP:V=7.99%I=7%D=4/7%Time=69D5A1DB%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,4E,"HTTP/1\.0\x20401\x20Unauthorized\r\ncontent-length:\x2029\r
+SF:\n\r\n<html><body>401</body></html>")%r(FourOhFourRequest,7A,"HTTP/1\.0
+SF:\x20404\x20Not\x20Found\r\ncontent-type:\x20application/json;\x20charse
+SF:t=utf-8\r\ncontent-length:\x2029\r\n\r\n<html><body>404</body></html>")
+SF:%r(HTTPOptions,84,"HTTP/1\.0\x20200\x20OK\r\ncontent-type:\x20applicati
+SF:on/json;\x20charset=utf-8\r\naccess-control-allow-headers:\x20content-t
+SF:ype\r\ncontent-length:\x203\r\n\r\n200")%r(RTSPRequest,84,"HTTP/1\.0\x2
+SF:0200\x20OK\r\ncontent-type:\x20application/json;\x20charset=utf-8\r\nac
+SF:cess-control-allow-headers:\x20content-type\r\ncontent-length:\x203\r\n
+SF:\r\n200")%r(RPCCheck,6D,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:
+SF:\x20text/html\r\ncontent-length:\x2038\r\n\r\n<html><body><h1>403</h1><
+SF:/body></html>")%r(DNSVersionBindReqTCP,6D,"HTTP/1\.0\x20403\x20Forbidde
+SF:n\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n<html><
+SF:body><h1>403</h1></body></html>")%r(DNSStatusRequestTCP,6D,"HTTP/1\.0\x
+SF:20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x20
+SF:38\r\n\r\n<html><body><h1>403</h1></body></html>")%r(Help,6D,"HTTP/1\.0
+SF:\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\x
+SF:2038\r\n\r\n<html><body><h1>403</h1></body></html>")%r(SSLSessionReq,6D
+SF:,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\nconten
+SF:t-length:\x2038\r\n\r\n<html><body><h1>403</h1></body></html>")%r(Termi
+SF:nalServerCookie,6D,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20t
+SF:ext/html\r\ncontent-length:\x2038\r\n\r\n<html><body><h1>403</h1></body
+SF:></html>")%r(TLSSessionReq,6D,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent
+SF:-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n<html><body><h1>403
+SF:</h1></body></html>")%r(Kerberos,6D,"HTTP/1\.0\x20403\x20Forbidden\r\nc
+SF:ontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n<html><body><
+SF:h1>403</h1></body></html>")%r(SMBProgNeg,6D,"HTTP/1\.0\x20403\x20Forbid
+SF:den\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n<html
+SF:><body><h1>403</h1></body></html>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8002-TCP:V=7.99%T=SSL%I=7%D=4/7%Time=69D5A1EE%P=x86_64-pc-linux-gnu
+SF:%r(GetRequest,4E,"HTTP/1\.0\x20401\x20Unauthorized\r\ncontent-length:\x
+SF:2029\r\n\r\n<html><body>401</body></html>")%r(HTTPOptions,84,"HTTP/1\.0
+SF:\x20200\x20OK\r\ncontent-type:\x20application/json;\x20charset=utf-8\r\
+SF:naccess-control-allow-headers:\x20content-type\r\ncontent-length:\x203\
+SF:r\n\r\n200")%r(RTSPRequest,84,"HTTP/1\.0\x20200\x20OK\r\ncontent-type:\
+SF:x20application/json;\x20charset=utf-8\r\naccess-control-allow-headers:\
+SF:x20content-type\r\ncontent-length:\x203\r\n\r\n200")%r(RPCCheck,6D,"HTT
+SF:P/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-len
+SF:gth:\x2038\r\n\r\n<html><body><h1>403</h1></body></html>")%r(DNSVersion
+SF:BindReqTCP,6D,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/h
+SF:tml\r\ncontent-length:\x2038\r\n\r\n<html><body><h1>403</h1></body></ht
+SF:ml>")%r(DNSStatusRequestTCP,6D,"HTTP/1\.0\x20403\x20Forbidden\r\nconten
+SF:t-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n<html><body><h1>40
+SF:3</h1></body></html>")%r(Help,6D,"HTTP/1\.0\x20403\x20Forbidden\r\ncont
+SF:ent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n<html><body><h1>
+SF:403</h1></body></html>")%r(SSLSessionReq,6D,"HTTP/1\.0\x20403\x20Forbid
+SF:den\r\ncontent-type:\x20text/html\r\ncontent-length:\x2038\r\n\r\n<html
+SF:><body><h1>403</h1></body></html>")%r(TerminalServerCookie,6D,"HTTP/1\.
+SF:0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\ncontent-length:\
+SF:x2038\r\n\r\n<html><body><h1>403</h1></body></html>")%r(TLSSessionReq,6
+SF:D,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\nconte
+SF:nt-length:\x2038\r\n\r\n<html><body><h1>403</h1></body></html>")%r(Kerb
+SF:eros,6D,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text/html\r\
+SF:ncontent-length:\x2038\r\n\r\n<html><body><h1>403</h1></body></html>")%
+SF:r(SMBProgNeg,6D,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x20text
+SF:/html\r\ncontent-length:\x2038\r\n\r\n<html><body><h1>403</h1></body></
+SF:html>")%r(X11Probe,6D,"HTTP/1\.0\x20403\x20Forbidden\r\ncontent-type:\x
+SF:20text/html\r\ncontent-length:\x2038\r\n\r\n<html><body><h1>403</h1></b
+SF:ody></html>")%r(FourOhFourRequest,7A,"HTTP/1\.0\x20404\x20Not\x20Found\
+SF:r\ncontent-type:\x20application/json;\x20charset=utf-8\r\ncontent-lengt
+SF:h:\x2029\r\n\r\n<html><body>404</body></html>");
+MAC Address: B8:BC:5B:97:FE:12 (Samsung Electronics)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.14, Linux 3.8 - 3.16
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   4.40 ms TIZEN (10.1.10.10)
+
+Nmap scan report for 10.1.10.18
+Host is up (0.030s latency).
+All 1000 scanned ports on 10.1.10.18 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: 64:9A:63:60:48:E5 (Ring)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized
+Running: Meross embedded
+OS details: Meross smart light bulb, Meross smart plug
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   29.89 ms 10.1.10.18
+
+Nmap scan report for havoc-sys (10.1.10.21)
+Host is up (0.0089s latency).
+All 1000 scanned ports on havoc-sys (10.1.10.21) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: 38:00:25:A9:56:B9 (Intel Corporate)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   8.90 ms havoc-sys (10.1.10.21)
+
+Nmap scan report for 10.1.10.28
+Host is up (0.0034s latency).
+All 1000 scanned ports on 10.1.10.28 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: B0:09:DA:C1:2D:FF (Ring Solutions)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   3.37 ms 10.1.10.28
+
+Nmap scan report for DESKTOP-7R0F4Q5 (10.1.10.53)
+Host is up (0.0097s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE SERVICE VERSION
+5357/tcp open  http    Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Service Unavailable
+|_http-server-header: Microsoft-HTTPAPI/2.0
+MAC Address: 94:18:65:CC:9A:B6 (Netgear)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 10|11|2019 (92%)
+OS CPE: cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_11 cpe:/o:microsoft:windows_server_2019
+Aggressive OS guesses: Microsoft Windows 10 1803 (92%), Microsoft Windows 10 1903 - 22H2 (92%), Microsoft Windows 10 22H2 (92%), Microsoft Windows 11 (89%), Microsoft Windows 10 1809 (87%), Microsoft Windows 10 1909 (85%), Microsoft Windows 10 1909 - 2004 (85%), Microsoft Windows Server 2019 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   9.71 ms DESKTOP-7R0F4Q5 (10.1.10.53)
+
+Nmap scan report for 10.1.10.55
+Host is up (0.0036s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 10.0p2 Debian 7 (protocol 2.0)
+111/tcp  open  rpcbind 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|_  100000  3,4          111/udp6  rpcbind
+3128/tcp open  http    Proxmox Virtual Environment REST API 3.0
+|_http-title: Site doesn't have a title.
+|_http-server-header: pve-api-daemon/3.0
+MAC Address: EC:8E:B5:6F:71:C2 (Hewlett Packard)
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.19
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   3.61 ms 10.1.10.55
+
+Nmap scan report for homepage-ct (10.1.10.56)
+Host is up (0.0037s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 10.0p2 Debian 7 (protocol 2.0)
+3000/tcp open  ppp?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, NCP, RPCCheck: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     x-nextjs-cache: HIT
+|     Cache-Control: s-maxage=31536000
+|     X-Powered-By: Next.js
+|     ETag: "8xgny91uf417z3"
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 56995
+|     Vary: Accept-Encoding
+|     Date: Wed, 08 Apr 2026 00:31:28 GMT
+|     Connection: close
+|     <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" data-next-head=""/><title data-next-head="">Homepage</title><meta name="description" content="A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations." data-next-head=""/><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" data-next-head=""/><link rel="shortcut icon" href="/homepage.ico" data-next-head=""/><link rel="icon" type="image/png" sizes="32x
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.1 405 Method Not Allowed
+|     Allow: GET
+|     Allow: HEAD
+|     Date: Wed, 08 Apr 2026 00:31:28 GMT
+|     Connection: close
+|_    Method Not Allowed
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port3000-TCP:V=7.99%I=7%D=4/7%Time=69D5A1E0%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,9310,"HTTP/1\.1\x20200\x20OK\r\nx-nextjs-cache:\x20HIT\r\nCache
+SF:-Control:\x20s-maxage=31536000\r\nX-Powered-By:\x20Next\.js\r\nETag:\x2
+SF:0\"8xgny91uf417z3\"\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\n
+SF:Content-Length:\x2056995\r\nVary:\x20Accept-Encoding\r\nDate:\x20Wed,\x
+SF:2008\x20Apr\x202026\x2000:31:28\x20GMT\r\nConnection:\x20close\r\n\r\n<
+SF:!DOCTYPE\x20html><html\x20lang=\"en\"><head><meta\x20charSet=\"utf-8\"\
+SF:x20data-next-head=\"\"/><meta\x20name=\"viewport\"\x20content=\"width=d
+SF:evice-width,\x20initial-scale=1\.0,\x20minimum-scale=1\.0,\x20maximum-s
+SF:cale=1\.0,\x20user-scalable=no\"\x20data-next-head=\"\"/><title\x20data
+SF:-next-head=\"\">Homepage</title><meta\x20name=\"description\"\x20conten
+SF:t=\"A\x20highly\x20customizable\x20homepage\x20\(or\x20startpage\x20/\x
+SF:20application\x20dashboard\)\x20with\x20Docker\x20and\x20service\x20API
+SF:\x20integrations\.\"\x20data-next-head=\"\"/><link\x20rel=\"apple-touch
+SF:-icon\"\x20sizes=\"180x180\"\x20href=\"/apple-touch-icon\.png\?v=4\"\x2
+SF:0data-next-head=\"\"/><link\x20rel=\"shortcut\x20icon\"\x20href=\"/home
+SF:page\.ico\"\x20data-next-head=\"\"/><link\x20rel=\"icon\"\x20type=\"ima
+SF:ge/png\"\x20sizes=\"32x")%r(Help,2F,"HTTP/1\.1\x20400\x20Bad\x20Request
+SF:\r\nConnection:\x20close\r\n\r\n")%r(NCP,2F,"HTTP/1\.1\x20400\x20Bad\x2
+SF:0Request\r\nConnection:\x20close\r\n\r\n")%r(HTTPOptions,86,"HTTP/1\.1\
+SF:x20405\x20Method\x20Not\x20Allowed\r\nAllow:\x20GET\r\nAllow:\x20HEAD\r
+SF:\nDate:\x20Wed,\x2008\x20Apr\x202026\x2000:31:28\x20GMT\r\nConnection:\
+SF:x20close\r\n\r\nMethod\x20Not\x20Allowed")%r(RTSPRequest,86,"HTTP/1\.1\
+SF:x20405\x20Method\x20Not\x20Allowed\r\nAllow:\x20GET\r\nAllow:\x20HEAD\r
+SF:\nDate:\x20Wed,\x2008\x20Apr\x202026\x2000:31:28\x20GMT\r\nConnection:\
+SF:x20close\r\n\r\nMethod\x20Not\x20Allowed")%r(RPCCheck,2F,"HTTP/1\.1\x20
+SF:400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(DNSVersionBin
+SF:dReqTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\
+SF:r\n\r\n")%r(DNSStatusRequestTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\
+SF:r\nConnection:\x20close\r\n\r\n");
+MAC Address: BC:24:11:56:47:27 (Proxmox Server Solutions GmbH)
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.19
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   3.69 ms homepage-ct (10.1.10.56)
+
+Nmap scan report for Ring-649a63605099 (10.1.10.70)
+Host is up (0.0091s latency).
+All 1000 scanned ports on Ring-649a63605099 (10.1.10.70) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: 64:9A:63:60:50:99 (Ring)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized
+Running: Meross embedded
+OS details: Meross smart light bulb, Meross smart plug
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   9.08 ms Ring-649a63605099 (10.1.10.70)
+
+Nmap scan report for 10.1.10.92
+Host is up (0.0062s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT     STATE SERVICE    VERSION
+53/tcp   open  tcpwrapped
+8008/tcp open  tcpwrapped
+8009/tcp open  tcpwrapped
+|_ajp-methods: Failed to get a valid response for the OPTION request
+8443/tcp open  tcpwrapped
+|_ssl-date: 2026-04-08T00:34:59+00:00; -1s from scanner time.
+|_http-title: Site doesn't have a title (text/html).
+| ssl-cert: Subject: commonName=9V0B536K FA8FCA811BCA/organizationName=Google Inc/stateOrProvinceName=California/countryName=US
+| Not valid before: 2019-02-17T01:36:13
+|_Not valid after:  2039-02-12T01:36:13
+9000/tcp open  tcpwrapped
+MAC Address: 3C:9B:D6:83:F4:DE (Vizio)
+Device type: general purpose
+Running: Linux 3.X|4.X
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4
+OS details: Linux 3.2 - 4.14
+Network Distance: 1 hop
+
+Host script results:
+|_clock-skew: -1s
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   6.24 ms 10.1.10.92
+
+Nmap scan report for Ring-649a636050B3 (10.1.10.96)
+Host is up (0.0057s latency).
+All 1000 scanned ports on Ring-649a636050B3 (10.1.10.96) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: 64:9A:63:60:50:B3 (Ring)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized
+Running: Meross embedded
+OS details: Meross smart light bulb, Meross smart plug
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   5.75 ms Ring-649a636050B3 (10.1.10.96)
+
+Nmap scan report for DESKTOP-7SRQNI1 (10.1.10.98)
+Host is up (0.0070s latency).
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds?
+5357/tcp open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-title: Service Unavailable
+|_http-server-header: Microsoft-HTTPAPI/2.0
+MAC Address: E0:D7:68:10:5E:21 (Unknown)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 10|11|2019 (97%)
+OS CPE: cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_11 cpe:/o:microsoft:windows_server_2019
+Aggressive OS guesses: Microsoft Windows 10 1803 (97%), Microsoft Windows 10 1903 - 22H2 (97%), Microsoft Windows 10 22H2 (95%), Microsoft Windows 11 (94%), Microsoft Windows 10 1809 (92%), Microsoft Windows 10 1909 (91%), Microsoft Windows 10 1909 - 2004 (91%), Microsoft Windows Server 2019 (91%), Microsoft Windows 10 20H2 (88%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-time: 
+|   date: 2026-04-08T00:34:02
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+|_nbstat: NetBIOS name: DESKTOP-7SRQNI1, NetBIOS user: <unknown>, NetBIOS MAC: e0:d7:68:10:5e:21 (unknown)
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   7.01 ms DESKTOP-7SRQNI1 (10.1.10.98)
+
+Nmap scan report for Ring-CC3bFBCB439E (10.1.10.100)
+Host is up (0.0067s latency).
+All 1000 scanned ports on Ring-CC3bFBCB439E (10.1.10.100) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: CC:3B:FB:CB:43:9E (Ring)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized
+Running: Meross embedded
+OS details: Meross smart light bulb, Meross smart plug
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   6.66 ms Ring-CC3bFBCB439E (10.1.10.100)
+
+Nmap scan report for VFI-451-735-735 (10.1.10.115)
+Host is up (0.012s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE SERVICE    VERSION
+8443/tcp open  https-alt?
+| ssl-cert: Subject: commonName=v400m-451735735.live.terminal.adyen.com/organizationName=Adyen NV/stateOrProvinceName=NH/countryName=NL
+| Subject Alternative Name: DNS:v400m-451735735.live.terminal.adyen.com, URI:www.adyen.com, email:possupport@adyen.com
+| Not valid before: 2026-03-11T10:01:39
+|_Not valid after:  2028-06-13T09:01:39
+|_ssl-date: TLS randomness does not represent time
+MAC Address: 04:C4:61:F1:5A:53 (Murata Manufacturing)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|media device|phone|broadband router
+Running (JUST GUESSING): Linux 3.X|4.X|2.6.X (97%), Google Android 4.1.X|4.2.X|5.X (91%), Netgear embedded (89%)
+OS CPE: cpe:/o:linux:linux_kernel:3 cpe:/o:linux:linux_kernel:4 cpe:/o:google:android:4.1.1 cpe:/o:linux:linux_kernel:3.4 cpe:/o:google:android:4.2.2 cpe:/o:google:android:5.0.1 cpe:/o:linux:linux_kernel:3.14 cpe:/o:linux:linux_kernel:2.6
+Aggressive OS guesses: Linux 3.11 - 4.9 (97%), Android 4.1.1 (91%), Linux 3.10 - 3.12 (91%), Linux 3.10 - 4.11 (91%), Linux 3.2 - 4.14 (91%), Android 4.2.2 (Linux 3.4) (91%), Android 5.0.1 (Linux 3.10) (90%), Linux 3.2 - 3.8 (90%), Linux 4.4 (90%), Netgear Orbi RBR20 or RBR50 (Linux 3.14) (89%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   12.20 ms VFI-451-735-735 (10.1.10.115)
+
+Nmap scan report for My-PC (10.1.10.119)
+Host is up (0.096s latency).
+All 1000 scanned ports on My-PC (10.1.10.119) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 38:A3:8C:60:14:5A (Unknown)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   96.12 ms My-PC (10.1.10.119)
+
+Nmap scan report for DESKTOP-RP4EGLK (10.1.10.121)
+Host is up (0.11s latency).
+All 1000 scanned ports on DESKTOP-RP4EGLK (10.1.10.121) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 94:18:65:CC:9F:6B (Netgear)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT       ADDRESS
+1   105.97 ms DESKTOP-RP4EGLK (10.1.10.121)
+
+Nmap scan report for Ring-649a63604B71 (10.1.10.139)
+Host is up (0.0073s latency).
+All 1000 scanned ports on Ring-649a63604B71 (10.1.10.139) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: 64:9A:63:60:4B:71 (Ring)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized
+Running: Meross embedded
+OS details: Meross smart light bulb, Meross smart plug
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   7.29 ms Ring-649a63604B71 (10.1.10.139)
+
+Nmap scan report for Ring-CC3bFBCC3AD8 (10.1.10.141)
+Host is up (0.0062s latency).
+All 1000 scanned ports on Ring-CC3bFBCC3AD8 (10.1.10.141) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: CC:3B:FB:CC:3A:D8 (Ring)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: specialized
+Running: Meross embedded
+OS details: Meross smart light bulb, Meross smart plug
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   6.17 ms Ring-CC3bFBCC3AD8 (10.1.10.141)
+
+Nmap scan report for Pixel-8 (10.1.10.161)
+Host is up (0.12s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT  STATE    SERVICE VERSION
+7/tcp filtered echo
+MAC Address: 5E:73:54:9E:99:1D (Unknown)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT       ADDRESS
+1   124.98 ms Pixel-8 (10.1.10.161)
+
+Nmap scan report for alpine-it-tools (10.1.10.165)
+Host is up (0.0041s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    nginx
+|_http-title: IT Tools - Handy online tools for developers
+MAC Address: BC:24:11:0F:BB:74 (Proxmox Server Solutions GmbH)
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.19
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   4.07 ms alpine-it-tools (10.1.10.165)
+
+Nmap scan report for W70B (10.1.10.172)
+Host is up (0.0039s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT    STATE SERVICE  VERSION
+443/tcp open  ssl/http nginx
+|_http-title: Site doesn't have a title (text/html).
+| ssl-cert: Subject: commonName=249ad85967f6/organizationName=Yealink Network Technology Co.,Ltd./stateOrProvinceName=Fujian/countryName=CN
+| Subject Alternative Name: DNS:249ad85967f6
+| Not valid before: 2023-04-17T01:19:17
+|_Not valid after:  2033-04-14T01:19:17
+|_ssl-date: TLS randomness does not represent time
+MAC Address: 24:9A:D8:59:67:F6 (Yealink(Xiamen) Network Technology)
+Device type: specialized
+Running: Philips embedded, Linux
+OS CPE: cpe:/o:linux:linux_kernel
+OS details: Philips Hue Bridge 2.0 (Linux)
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   3.90 ms W70B (10.1.10.172)
+
+Nmap scan report for DESKTOP-UF9IROP (10.1.10.182)
+Host is up (0.097s latency).
+All 1000 scanned ports on DESKTOP-UF9IROP (10.1.10.182) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 94:18:65:CD:7C:E0 (Netgear)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   97.26 ms DESKTOP-UF9IROP (10.1.10.182)
+
+Nmap scan report for SMT (10.1.10.201)
+Host is up (0.0037s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE SERVICE VERSION
+4045/tcp open  http    Mongoose httpd
+|_http-cors: POST
+|_http-title: Site doesn't have a title (text/html).
+MAC Address: 00:D8:61:F1:00:67 (Micro-Star Intl)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 11|10|2008 (92%), FreeBSD 6.X (88%)
+OS CPE: cpe:/o:microsoft:windows_11 cpe:/o:freebsd:freebsd:6.2 cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_server_2008::beta3 cpe:/o:microsoft:windows_server_2008
+Aggressive OS guesses: Microsoft Windows 11 24H2 (92%), Microsoft Windows 11 21H2 (91%), FreeBSD 6.2-RELEASE (88%), Microsoft Windows 10 (86%), Microsoft Windows Server 2008 or 2008 Beta 3 (85%), Microsoft Windows 10 1607 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   3.68 ms SMT (10.1.10.201)
+
+Nmap scan report for octoprint-ct (10.1.10.202)
+Host is up (0.0024s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 10.0p2 Debian 7 (protocol 2.0)
+5000/tcp open  upnp?
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 NOT FOUND
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 207
+|     X-Clacks-Overhead: GNU Terry Pratchett
+|     Server-Timing: app;dur=0
+|     Vary: Cookie
+|     X-Robots-Tag: noindex, nofollow, noimageindex
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: sameorigin
+|     <!doctype html>
+|     <html lang=en>
+|     <title>404 Not Found</title>
+|     <h1>Not Found</h1>
+|     <p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+|   GenericLines, RTSPRequest: 
+|     HTTP/1.1 400 Bad Request
+|   GetRequest: 
+|     HTTP/1.1 302 FOUND
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 299
+|     Location: /login/?redirect=/?&permissions=STATUS,SETTINGS_READ
+|     Set-Cookie: csrf_token_P80=IjVhMGM0ZjJmZjkxMjM0YWE0OTdiYWI3YzZhYTI3MDk1MzhiYzU4NmMi.adWh4A.lbtCy5Ff7MdKmumzigfH3nX_yYE; Path=/; SameSite=Lax
+|     Set-Cookie: session_P80=.eJxljkEKwyAQRe_iOpRxRuOYy4RRRxIIoSS6CKV3byh01fX_7_FeZq6HnouZ2tF1MPNazGSqS1khYBREHLlkceIoWZuiK07FcvXVxgjA3iLZmNnnYCFDDYhcXQxRblhudmQlkYzsJbJCcUIo4MZciMptIVYJwaPCGEiYIFk2d0g_9fjW7H3bBrMW3dvarof0tszteurf8ju_P4MeQB4.adWh4A._gYxTDYZVVK6b5_i0TLG-1EJsJk; HttpOnly; Path=/; SameSite=Lax
+|     X-Clacks-Overhead: GNU Terry Pratchett
+|     Server-Timing: app;dur=2
+|     Vary: Cookie
+|     X-Robots-Tag: noindex, nofollow, noimageindex
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: sameorigin
+|     <!doctype html>
+|     <html lang=en>
+|     <title>Redirecting...</title>
+|     <h1>Redirecting...</h1>
+|     <p>You should be redirected auto
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     Content-Type: text/html; charset=utf-8
+|     Allow: GET, OPTIONS, HEAD
+|     X-Clacks-Overhead: GNU Terry Pratchett
+|     Server-Timing: app;dur=0
+|     Vary: Cookie
+|     Content-Length: 0
+|     X-Robots-Tag: noindex, nofollow, noimageindex
+|     X-Content-Type-Options: nosniff
+|_    X-Frame-Options: sameorigin
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port5000-TCP:V=7.99%I=7%D=4/7%Time=69D5A1E0%P=x86_64-pc-linux-gnu%r(Gen
+SF:ericLines,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(GetRequest
+SF:,43A,"HTTP/1\.1\x20302\x20FOUND\r\nContent-Type:\x20text/html;\x20chars
+SF:et=utf-8\r\nContent-Length:\x20299\r\nLocation:\x20/login/\?redirect=/\
+SF:?&permissions=STATUS,SETTINGS_READ\r\nSet-Cookie:\x20csrf_token_P80=IjV
+SF:hMGM0ZjJmZjkxMjM0YWE0OTdiYWI3YzZhYTI3MDk1MzhiYzU4NmMi\.adWh4A\.lbtCy5Ff
+SF:7MdKmumzigfH3nX_yYE;\x20Path=/;\x20SameSite=Lax\r\nSet-Cookie:\x20sessi
+SF:on_P80=\.eJxljkEKwyAQRe_iOpRxRuOYy4RRRxIIoSS6CKV3byh01fX_7_FeZq6HnouZ2t
+SF:F1MPNazGSqS1khYBREHLlkceIoWZuiK07FcvXVxgjA3iLZmNnnYCFDDYhcXQxRblhudmQlk
+SF:YzsJbJCcUIo4MZciMptIVYJwaPCGEiYIFk2d0g_9fjW7H3bBrMW3dvarof0tszteurf8ju_
+SF:P4MeQB4\.adWh4A\._gYxTDYZVVK6b5_i0TLG-1EJsJk;\x20HttpOnly;\x20Path=/;\x
+SF:20SameSite=Lax\r\nX-Clacks-Overhead:\x20GNU\x20Terry\x20Pratchett\r\nSe
+SF:rver-Timing:\x20app;dur=2\r\nVary:\x20Cookie\r\nX-Robots-Tag:\x20noinde
+SF:x,\x20nofollow,\x20noimageindex\r\nX-Content-Type-Options:\x20nosniff\r
+SF:\nX-Frame-Options:\x20sameorigin\r\n\r\n<!doctype\x20html>\n<html\x20la
+SF:ng=en>\n<title>Redirecting\.\.\.</title>\n<h1>Redirecting\.\.\.</h1>\n<
+SF:p>You\x20should\x20be\x20redirected\x20auto")%r(RTSPRequest,1C,"HTTP/1\
+SF:.1\x20400\x20Bad\x20Request\r\n\r\n")%r(HTTPOptions,126,"HTTP/1\.1\x202
+SF:00\x20OK\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nAllow:\x20G
+SF:ET,\x20OPTIONS,\x20HEAD\r\nX-Clacks-Overhead:\x20GNU\x20Terry\x20Pratch
+SF:ett\r\nServer-Timing:\x20app;dur=0\r\nVary:\x20Cookie\r\nContent-Length
+SF::\x200\r\nX-Robots-Tag:\x20noindex,\x20nofollow,\x20noimageindex\r\nX-C
+SF:ontent-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20sameorigin\r\n\r
+SF:\n")%r(FourOhFourRequest,1E3,"HTTP/1\.1\x20404\x20NOT\x20FOUND\r\nConte
+SF:nt-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x20207\r\nX-
+SF:Clacks-Overhead:\x20GNU\x20Terry\x20Pratchett\r\nServer-Timing:\x20app;
+SF:dur=0\r\nVary:\x20Cookie\r\nX-Robots-Tag:\x20noindex,\x20nofollow,\x20n
+SF:oimageindex\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x
+SF:20sameorigin\r\n\r\n<!doctype\x20html>\n<html\x20lang=en>\n<title>404\x
+SF:20Not\x20Found</title>\n<h1>Not\x20Found</h1>\n<p>The\x20requested\x20U
+SF:RL\x20was\x20not\x20found\x20on\x20the\x20server\.\x20If\x20you\x20ente
+SF:red\x20the\x20URL\x20manually\x20please\x20check\x20your\x20spelling\x2
+SF:0and\x20try\x20again\.</p>\n");
+MAC Address: BC:24:11:12:A0:CF (Proxmox Server Solutions GmbH)
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.19
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   2.45 ms octoprint-ct (10.1.10.202)
+
+Nmap scan report for Dylan-s-S26-Ultra (10.1.10.209)
+Host is up (0.044s latency).
+All 1000 scanned ports on Dylan-s-S26-Ultra (10.1.10.209) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: D2:37:36:F1:75:94 (Unknown)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|media device|specialized
+Running: Microsoft Windows 10|11|2016, Microsoft Xbox 360, NTI embedded
+OS CPE: cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_11 cpe:/o:microsoft:windows_server_2016 cpe:/h:microsoft:xbox_360_kernel
+OS details: Microsoft Windows 10 - 11, Microsoft Windows Server 2016, Microsoft Xbox 360 Dashboard, NTI E-MICRO-TRHP temperature sensor
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   43.86 ms Dylan-s-S26-Ultra (10.1.10.209)
+
+Nmap scan report for BRW4C82A993FDB2 (10.1.10.227)
+Host is up (0.0050s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT     STATE SERVICE    VERSION
+80/tcp   open  http
+| http-title: Brother MFC-L2820DW
+|_Requested resource was /home/status.html
+| http-robots.txt: 1 disallowed entry 
+|_/
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 301 Moved Permanently
+|     Cache-Control: no-store
+|     X-Frame-Options: DENY
+|     Content-Length: 0
+|     Connection: close
+|     Pragma: no-cache
+|     Location: /home/status.html
+|   HTTPOptions: 
+|     HTTP/1.1 411 Length Required
+|     Cache-Control: no-store
+|     X-Frame-Options: DENY
+|     Content-Length: 974
+|     Content-Type: text/html
+|     Connection: close
+|     Pragma: no-cache
+|     <html>
+|     <head>
+|     <title>HTTP status</title>
+|     <style type="text/css">
+|     body
+|     margin-top: 30px;
+|     margin-right: 5%;
+|     margin-left: 5%;
+|     background-color: #ffffff;
+|     color: #000000;
+|     font-family: serif;
+|     font-size: 12px;
+|     line-height: 150%;
+|     .header
+|     color: #808080;
+|     font-family: 'Arial Black', sans-serif;
+|     font-size: 42px;
+|     line-height: 100%;
+|     border-bottom: 2px solid #808080;
+|     margin-bottom: 30px;
+|     .caps
+|     color: #e00000;
+|     .main
+|     margin-left: 5%;
+|     margin-right: 5%;
+|     .status
+|     font-family: sans-serif;
+|     font-size: 18px;
+|     font-weight: bold;
+|     .reason
+|     margin-top: 30px;
+|     font-family: serif;
+|     .footer
+|     margin-top: 30px;
+|     border-top: 2px solid #808080;
+|     </style>
+|     </head>
+|     <body>
+|     <div class="header">
+|     <span class="caps">h</span>ttpd
+|     </div>
+|     <div class="
+|   RTSPRequest: 
+|     HTTP/1.1 505 HTTP Version Not Supported
+|     Cache-Control: no-store
+|     X-Frame-Options: DENY
+|     Content-Length: 989
+|     Content-Type: text/html
+|     Connection: close
+|     Pragma: no-cache
+|     <html>
+|     <head>
+|     <title>HTTP status</title>
+|     <style type="text/css">
+|     body
+|     margin-top: 30px;
+|     margin-right: 5%;
+|     margin-left: 5%;
+|     background-color: #ffffff;
+|     color: #000000;
+|     font-family: serif;
+|     font-size: 12px;
+|     line-height: 150%;
+|     .header
+|     color: #808080;
+|     font-family: 'Arial Black', sans-serif;
+|     font-size: 42px;
+|     line-height: 100%;
+|     border-bottom: 2px solid #808080;
+|     margin-bottom: 30px;
+|     .caps
+|     color: #e00000;
+|     .main
+|     margin-left: 5%;
+|     margin-right: 5%;
+|     .status
+|     font-family: sans-serif;
+|     font-size: 18px;
+|     font-weight: bold;
+|     .reason
+|     margin-top: 30px;
+|     font-family: serif;
+|     .footer
+|     margin-top: 30px;
+|     border-top: 2px solid #808080;
+|     </style>
+|     </head>
+|     <body>
+|     <div class="header">
+|     <span class="caps">h</span>ttpd
+|_    </div>
+443/tcp  open  ssl/https
+| http-robots.txt: 1 disallowed entry 
+|_/
+| ssl-cert: Subject: commonName=BRW4C82A993FDB2.local
+| Subject Alternative Name: DNS:BRW4C82A993FDB2.local
+| Not valid before: 2000-01-01T00:00:00
+|_Not valid after:  2110-12-31T23:59:59
+|_ssl-date: TLS randomness does not represent time
+| http-title: Brother MFC-L2820DW
+|_Requested resource was /home/status.html
+515/tcp  open  printer
+631/tcp  open  ipp
+| http-robots.txt: 1 disallowed entry 
+|_/
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 301 Moved Permanently
+|     Cache-Control: no-store
+|     X-Frame-Options: DENY
+|     Content-Length: 0
+|     Connection: close
+|     Pragma: no-cache
+|     Location: /home/status.html
+|   HTTPOptions: 
+|     HTTP/1.1 400 Bad Request
+|     Cache-Control: no-store
+|     X-Frame-Options: DENY
+|     Content-Length: 965
+|     Content-Type: text/html
+|     Connection: close
+|     Pragma: no-cache
+|     <html>
+|     <head>
+|     <title>HTTP status</title>
+|     <style type="text/css">
+|     body
+|     margin-top: 30px;
+|     margin-right: 5%;
+|     margin-left: 5%;
+|     background-color: #ffffff;
+|     color: #000000;
+|     font-family: serif;
+|     font-size: 12px;
+|     line-height: 150%;
+|     .header
+|     color: #808080;
+|     font-family: 'Arial Black', sans-serif;
+|     font-size: 42px;
+|     line-height: 100%;
+|     border-bottom: 2px solid #808080;
+|     margin-bottom: 30px;
+|     .caps
+|     color: #e00000;
+|     .main
+|     margin-left: 5%;
+|     margin-right: 5%;
+|     .status
+|     font-family: sans-serif;
+|     font-size: 18px;
+|     font-weight: bold;
+|     .reason
+|     margin-top: 30px;
+|     font-family: serif;
+|     .footer
+|     margin-top: 30px;
+|     border-top: 2px solid #808080;
+|     </style>
+|     </head>
+|     <body>
+|     <div class="header">
+|     <span class="caps">h</span>ttpd
+|     </div>
+|     <div class="main
+|   RTSPRequest: 
+|     HTTP/1.1 505 HTTP Version Not Supported
+|     Cache-Control: no-store
+|     X-Frame-Options: DENY
+|     Content-Length: 989
+|     Content-Type: text/html
+|     Connection: close
+|     Pragma: no-cache
+|     <html>
+|     <head>
+|     <title>HTTP status</title>
+|     <style type="text/css">
+|     body
+|     margin-top: 30px;
+|     margin-right: 5%;
+|     margin-left: 5%;
+|     background-color: #ffffff;
+|     color: #000000;
+|     font-family: serif;
+|     font-size: 12px;
+|     line-height: 150%;
+|     .header
+|     color: #808080;
+|     font-family: 'Arial Black', sans-serif;
+|     font-size: 42px;
+|     line-height: 100%;
+|     border-bottom: 2px solid #808080;
+|     margin-bottom: 30px;
+|     .caps
+|     color: #e00000;
+|     .main
+|     margin-left: 5%;
+|     margin-right: 5%;
+|     .status
+|     font-family: sans-serif;
+|     font-size: 18px;
+|     font-weight: bold;
+|     .reason
+|     margin-top: 30px;
+|     font-family: serif;
+|     .footer
+|     margin-top: 30px;
+|     border-top: 2px solid #808080;
+|     </style>
+|     </head>
+|     <body>
+|     <div class="header">
+|     <span class="caps">h</span>ttpd
+|_    </div>
+| http-title: Brother MFC-L2820DW
+|_Requested resource was /home/status.html
+9100/tcp open  jetdirect?
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.99%I=7%D=4/7%Time=69D5A1E2%P=x86_64-pc-linux-gnu%r(GetRe
+SF:quest,A7,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nCache-Control:\x2
+SF:0no-store\r\nX-Frame-Options:\x20DENY\r\nContent-Length:\x200\r\nConnec
+SF:tion:\x20close\r\nPragma:\x20no-cache\r\nLocation:\x20/home/status\.htm
+SF:l\r\n\r\n")%r(HTTPOptions,471,"HTTP/1\.1\x20411\x20Length\x20Required\r
+SF:\nCache-Control:\x20no-store\r\nX-Frame-Options:\x20DENY\r\nContent-Len
+SF:gth:\x20974\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\nPr
+SF:agma:\x20no-cache\r\n\r\n\n<html>\n<head>\n<title>HTTP\x20status</title
+SF:>\n<style\x20type=\"text/css\">\nbody\n{\nmargin-top:\x2030px;\nmargin-
+SF:right:\x205%;\nmargin-left:\x205%;\nbackground-color:\x20#ffffff;\ncolo
+SF:r:\x20#000000;\nfont-family:\x20serif;\nfont-size:\x2012px;\nline-heigh
+SF:t:\x20150%;\n}\n\.header\n{\ncolor:\x20#808080;\nfont-family:\x20'Arial
+SF:\x20Black',\x20sans-serif;\nfont-size:\x2042px;\nline-height:\x20100%;\
+SF:nborder-bottom:\x202px\x20solid\x20#808080;\nmargin-bottom:\x2030px;\n}
+SF:\n\.caps\n{\ncolor:\x20#e00000;\n}\n\.main\n{\nmargin-left:\x205%;\nmar
+SF:gin-right:\x205%;\n}\n\.status\n{\nfont-family:\x20sans-serif;\nfont-si
+SF:ze:\x2018px;\nfont-weight:\x20bold;\n}\n\.reason\n{\nmargin-top:\x2030p
+SF:x;\nfont-family:\x20serif;\n}\n\.footer\n{\nmargin-top:\x2030px;\nborde
+SF:r-top:\x202px\x20solid\x20#808080;\n}\n</style>\n</head>\n<body>\n<div\
+SF:x20class=\"header\">\n<span\x20class=\"caps\">h</span>ttpd\n</div>\n<di
+SF:v\x20class=\"")%r(RTSPRequest,48B,"HTTP/1\.1\x20505\x20HTTP\x20Version\
+SF:x20Not\x20Supported\r\nCache-Control:\x20no-store\r\nX-Frame-Options:\x
+SF:20DENY\r\nContent-Length:\x20989\r\nContent-Type:\x20text/html\r\nConne
+SF:ction:\x20close\r\nPragma:\x20no-cache\r\n\r\n\n<html>\n<head>\n<title>
+SF:HTTP\x20status</title>\n<style\x20type=\"text/css\">\nbody\n{\nmargin-t
+SF:op:\x2030px;\nmargin-right:\x205%;\nmargin-left:\x205%;\nbackground-col
+SF:or:\x20#ffffff;\ncolor:\x20#000000;\nfont-family:\x20serif;\nfont-size:
+SF:\x2012px;\nline-height:\x20150%;\n}\n\.header\n{\ncolor:\x20#808080;\nf
+SF:ont-family:\x20'Arial\x20Black',\x20sans-serif;\nfont-size:\x2042px;\nl
+SF:ine-height:\x20100%;\nborder-bottom:\x202px\x20solid\x20#808080;\nmargi
+SF:n-bottom:\x2030px;\n}\n\.caps\n{\ncolor:\x20#e00000;\n}\n\.main\n{\nmar
+SF:gin-left:\x205%;\nmargin-right:\x205%;\n}\n\.status\n{\nfont-family:\x2
+SF:0sans-serif;\nfont-size:\x2018px;\nfont-weight:\x20bold;\n}\n\.reason\n
+SF:{\nmargin-top:\x2030px;\nfont-family:\x20serif;\n}\n\.footer\n{\nmargin
+SF:-top:\x2030px;\nborder-top:\x202px\x20solid\x20#808080;\n}\n</style>\n<
+SF:/head>\n<body>\n<div\x20class=\"header\">\n<span\x20class=\"caps\">h</s
+SF:pan>ttpd\n</div>\n<");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port631-TCP:V=7.99%I=7%D=4/7%Time=69D5A1E2%P=x86_64-pc-linux-gnu%r(GetR
+SF:equest,A7,"HTTP/1\.1\x20301\x20Moved\x20Permanently\r\nCache-Control:\x
+SF:20no-store\r\nX-Frame-Options:\x20DENY\r\nContent-Length:\x200\r\nConne
+SF:ction:\x20close\r\nPragma:\x20no-cache\r\nLocation:\x20/home/status\.ht
+SF:ml\r\n\r\n")%r(HTTPOptions,464,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nC
+SF:ache-Control:\x20no-store\r\nX-Frame-Options:\x20DENY\r\nContent-Length
+SF::\x20965\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\nPragm
+SF:a:\x20no-cache\r\n\r\n\n<html>\n<head>\n<title>HTTP\x20status</title>\n
+SF:<style\x20type=\"text/css\">\nbody\n{\nmargin-top:\x2030px;\nmargin-rig
+SF:ht:\x205%;\nmargin-left:\x205%;\nbackground-color:\x20#ffffff;\ncolor:\
+SF:x20#000000;\nfont-family:\x20serif;\nfont-size:\x2012px;\nline-height:\
+SF:x20150%;\n}\n\.header\n{\ncolor:\x20#808080;\nfont-family:\x20'Arial\x2
+SF:0Black',\x20sans-serif;\nfont-size:\x2042px;\nline-height:\x20100%;\nbo
+SF:rder-bottom:\x202px\x20solid\x20#808080;\nmargin-bottom:\x2030px;\n}\n\
+SF:.caps\n{\ncolor:\x20#e00000;\n}\n\.main\n{\nmargin-left:\x205%;\nmargin
+SF:-right:\x205%;\n}\n\.status\n{\nfont-family:\x20sans-serif;\nfont-size:
+SF:\x2018px;\nfont-weight:\x20bold;\n}\n\.reason\n{\nmargin-top:\x2030px;\
+SF:nfont-family:\x20serif;\n}\n\.footer\n{\nmargin-top:\x2030px;\nborder-t
+SF:op:\x202px\x20solid\x20#808080;\n}\n</style>\n</head>\n<body>\n<div\x20
+SF:class=\"header\">\n<span\x20class=\"caps\">h</span>ttpd\n</div>\n<div\x
+SF:20class=\"main")%r(RTSPRequest,48B,"HTTP/1\.1\x20505\x20HTTP\x20Version
+SF:\x20Not\x20Supported\r\nCache-Control:\x20no-store\r\nX-Frame-Options:\
+SF:x20DENY\r\nContent-Length:\x20989\r\nContent-Type:\x20text/html\r\nConn
+SF:ection:\x20close\r\nPragma:\x20no-cache\r\n\r\n\n<html>\n<head>\n<title
+SF:>HTTP\x20status</title>\n<style\x20type=\"text/css\">\nbody\n{\nmargin-
+SF:top:\x2030px;\nmargin-right:\x205%;\nmargin-left:\x205%;\nbackground-co
+SF:lor:\x20#ffffff;\ncolor:\x20#000000;\nfont-family:\x20serif;\nfont-size
+SF::\x2012px;\nline-height:\x20150%;\n}\n\.header\n{\ncolor:\x20#808080;\n
+SF:font-family:\x20'Arial\x20Black',\x20sans-serif;\nfont-size:\x2042px;\n
+SF:line-height:\x20100%;\nborder-bottom:\x202px\x20solid\x20#808080;\nmarg
+SF:in-bottom:\x2030px;\n}\n\.caps\n{\ncolor:\x20#e00000;\n}\n\.main\n{\nma
+SF:rgin-left:\x205%;\nmargin-right:\x205%;\n}\n\.status\n{\nfont-family:\x
+SF:20sans-serif;\nfont-size:\x2018px;\nfont-weight:\x20bold;\n}\n\.reason\
+SF:n{\nmargin-top:\x2030px;\nfont-family:\x20serif;\n}\n\.footer\n{\nmargi
+SF:n-top:\x2030px;\nborder-top:\x202px\x20solid\x20#808080;\n}\n</style>\n
+SF:</head>\n<body>\n<div\x20class=\"header\">\n<span\x20class=\"caps\">h</
+SF:span>ttpd\n</div>\n<");
+MAC Address: 4C:82:A9:93:FD:B2 (Cloud Network Technology Singapore PTE.)
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.99%E=4%D=4/7%OT=80%CT=1%CU=32638%PV=Y%DS=1%DC=D%G=Y%M=4C82A9%TM
+OS:=69D5A2BA%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=108%TS=9)SEQ(SP=106
+OS:%GCD=1%ISR=106%CI=RD%II=I%TS=A)SEQ(SP=106%GCD=1%ISR=107%CI=I%II=I%TS=A)S
+OS:EQ(SP=107%GCD=1%ISR=10C%TS=A)SEQ(SP=FD%GCD=1%ISR=101%II=I%TS=A)OPS(O1=M5
+OS:B4NW0NNT11%O2=M578NW0NNSNNT11%O3=M280NW0NNT11%O4=M5B4NW0NNSNNT11%O5=M218
+OS:NW0NNSNNT11%O6=M109NNSNNT11)WIN(W1=21F0%W2=2088%W3=2258%W4=21F0%W5=20C0%
+OS:W6=209D)ECN(R=Y%DF=N%T=40%W=2238%O=M5B4NW0NNS%CC=N%Q=)T1(R=Y%DF=N%T=40%S
+OS:=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=N)T5(R=Y%DF=N%T=40%W=0%S=Z%A=S+%
+OS:F=AR%O=%RD=0%Q=)T6(R=Y%DF=N%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=N%
+OS:T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=FF%IPL=38%UN=0%RIPL=G%RI
+OS:D=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=FF%CD=S)
+
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   5.00 ms BRW4C82A993FDB2 (10.1.10.227)
+
+Nmap scan report for 2cc548065bae (10.1.10.246)
+Host is up (0.012s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT     STATE SERVICE        VERSION
+8080/tcp open  http-proxy     Jetty(2.2.4-128+bundle)
+|_http-title: Site doesn't have a title (text/html).
+|_http-server-header: Jetty(2.2.4-128+bundle)
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 404 Not Found
+|     Content-Type: text/html
+|     Content-Length: 31
+|     Server: Jetty(2.2.4-128+bundle)
+|     <HTML>
+|     <BODY>
+|     </BODY>
+|     </HTML>
+|   HTTPOptions: 
+|     HTTP/1.1 404 Not Found
+|     Cache-Control: must-revalidate,no-cache,no-store
+|     Content-Type: text/html;charset=ISO-8859-1
+|     Content-Length: 1282
+|     Server: Jetty(2.2.4-128+bundle)
+|     <html>
+|     <head>
+|     <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"/>
+|     <title>Error 404 Not Found</title>
+|     </head>
+|     <body>
+|     <h2>HTTP ERROR: 404</h2>
+|     <p>Problem accessing /. Reason:
+|     <pre> Not Found</pre></p>
+|_    /><i><small>Powered by Jetty:// 8.y.z-SNAPSHOT</small></i>
+8443/tcp open  ssl/https-alt?
+|_ssl-date: 2026-04-08T00:35:00+00:00; +1s from scanner time.
+| ssl-cert: Subject: commonName=22a6d755-8ca6-4a82-a724-2cc548065bae
+| Subject Alternative Name: DNS:22a6d755-8ca6-4a82-a724-2cc548065bae.local, DNS:localhost, IP Address:127.0.0.1, IP Address:0:0:0:0:0:0:0:1
+| Not valid before: 2025-06-23T11:00:34
+|_Not valid after:  2026-06-24T11:00:34
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8080-TCP:V=7.99%I=7%D=4/7%Time=69D5A1E1%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,87,"HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Type:\x20text/h
+SF:tml\r\nContent-Length:\x2031\r\nServer:\x20Jetty\(2\.2\.4-128\+bundle\)
+SF:\r\n\r\n<HTML>\n<BODY>\n\n</BODY>\n</HTML>\n")%r(HTTPOptions,5B1,"HTTP/
+SF:1\.1\x20404\x20Not\x20Found\r\nCache-Control:\x20must-revalidate,no-cac
+SF:he,no-store\r\nContent-Type:\x20text/html;charset=ISO-8859-1\r\nContent
+SF:-Length:\x201282\r\nServer:\x20Jetty\(2\.2\.4-128\+bundle\)\r\n\r\n<htm
+SF:l>\n<head>\n<meta\x20http-equiv=\"Content-Type\"\x20content=\"text/html
+SF:;charset=ISO-8859-1\"/>\n<title>Error\x20404\x20Not\x20Found</title>\n<
+SF:/head>\n<body>\n<h2>HTTP\x20ERROR:\x20404</h2>\n<p>Problem\x20accessing
+SF:\x20/\.\x20Reason:\n<pre>\x20\x20\x20\x20Not\x20Found</pre></p>\n<hr\x2
+SF:0/><i><small>Powered\x20by\x20Jetty://\x208\.y\.z-SNAPSHOT</small></i>\
+SF:n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\n\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\n\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\n\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20");
+MAC Address: 2C:C5:48:06:5B:AC (IAdea)
+Device type: media device
+Running: Google Android 5.X
+OS CPE: cpe:/o:google:android:5.0
+OS details: Sony Android TV (Android 5.0)
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT      ADDRESS
+1   12.30 ms 2cc548065bae (10.1.10.246)
+
+Nmap scan report for manyfold-ct (10.1.10.251)
+Host is up (0.0022s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 10.0p2 Debian 7 (protocol 2.0)
+80/tcp   open  http    nginx
+|_http-title: Manyfold
+| http-robots.txt: 1 disallowed entry 
+|_/
+5000/tcp open  upnp?
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP, RTSPRequest, SMBProgNeg, ZendJavaBridge: 
+|     HTTP/1.0 400 Bad Request
+|     content-length: 0
+|   GenericLines: 
+|     HTTP/1.0 500 Internal Server Error
+|     content-length: 0
+|   GetRequest: 
+|     HTTP/1.0 200 OK
+|     x-frame-options: SAMEORIGIN
+|     x-xss-protection: 0
+|     x-content-type-options: nosniff
+|     x-permitted-cross-domain-policies: none
+|     referrer-policy: strict-origin-when-cross-origin
+|     link: </assets/themes/default-318603d3.css>; rel=preload; as=style; nopush
+|     content-type: text/html; charset=utf-8
+|     content-security-policy: connect-src 'self'; default-src 'self'; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com; frame-ancestors 'self'; frame-src 'self'; img-src 'self' data: https://cdn.jsdelivr.net https://raw.githubusercontent.com; object-src 'none'; script-src 'self' 'nonce-'; style-src 'self'; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'nonce-' https://fonts.googleapis.com;
+|     content-language: en
+|     etag: W/"880a86b97dd3f1771b2553d8fc1e84c7"
+|     cache-control: max-age=0, private, must-revalidate
+|     set-cookie: _manyfold_session=WM5hFrfie0tIN%2FevujpllvOe%2Fs
+|   HTTPOptions: 
+|     HTTP/1.0 404 Not Found
+|     content-type: text/html; charset=UTF-8
+|     x-request-id: 4254e999-ed0d-41ac-91ac-6b7371a3d985
+|     x-runtime: 0.001273
+|     vary: Origin
+|     content-length: 4897
+|     <!doctype html>
+|     <html lang="en">
+|     <head>
+|     <title>The page you were looking for doesn
+|     exist (404 Not found)</title>
+|     <meta charset="utf-8">
+|     <meta name="viewport" content="initial-scale=1, width=device-width">
+|     <meta name="robots" content="noindex, nofollow">
+|     <style>
+|     *::before, *::after {
+|     box-sizing: border-box;
+|     margin: 0;
+|     html {
+|     font-size: 16px;
+|     body {
+|     background: #FFF;
+|     color: #261B23;
+|     display: grid;
+|_    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Aptos, Roboto, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port5000-TCP:V=7.99%I=7%D=4/7%Time=69D5A1E5%P=x86_64-pc-linux-gnu%r(Gen
+SF:ericLines,39,"HTTP/1\.0\x20500\x20Internal\x20Server\x20Error\r\nconten
+SF:t-length:\x200\r\n\r\n")%r(GetRequest,279F,"HTTP/1\.0\x20200\x20OK\r\nx
+SF:-frame-options:\x20SAMEORIGIN\r\nx-xss-protection:\x200\r\nx-content-ty
+SF:pe-options:\x20nosniff\r\nx-permitted-cross-domain-policies:\x20none\r\
+SF:nreferrer-policy:\x20strict-origin-when-cross-origin\r\nlink:\x20</asse
+SF:ts/themes/default-318603d3\.css>;\x20rel=preload;\x20as=style;\x20nopus
+SF:h\r\ncontent-type:\x20text/html;\x20charset=utf-8\r\ncontent-security-p
+SF:olicy:\x20connect-src\x20'self';\x20default-src\x20'self';\x20font-src\
+SF:x20'self'\x20https://cdn\.jsdelivr\.net\x20https://fonts\.gstatic\.com;
+SF:\x20frame-ancestors\x20'self';\x20frame-src\x20'self';\x20img-src\x20's
+SF:elf'\x20data:\x20https://cdn\.jsdelivr\.net\x20https://raw\.githubuserc
+SF:ontent\.com;\x20object-src\x20'none';\x20script-src\x20'self'\x20'nonce
+SF:-';\x20style-src\x20'self';\x20style-src-attr\x20'unsafe-inline';\x20st
+SF:yle-src-elem\x20'self'\x20'nonce-'\x20https://fonts\.googleapis\.com;\r
+SF:\ncontent-language:\x20en\r\netag:\x20W/\"880a86b97dd3f1771b2553d8fc1e8
+SF:4c7\"\r\ncache-control:\x20max-age=0,\x20private,\x20must-revalidate\r\
+SF:nset-cookie:\x20_manyfold_session=WM5hFrfie0tIN%2FevujpllvOe%2Fs")%r(RT
+SF:SPRequest,2F,"HTTP/1\.0\x20400\x20Bad\x20Request\r\ncontent-length:\x20
+SF:0\r\n\r\n")%r(DNSVersionBindReqTCP,2F,"HTTP/1\.0\x20400\x20Bad\x20Reque
+SF:st\r\ncontent-length:\x200\r\n\r\n")%r(SMBProgNeg,2F,"HTTP/1\.0\x20400\
+SF:x20Bad\x20Request\r\ncontent-length:\x200\r\n\r\n")%r(ZendJavaBridge,2F
+SF:,"HTTP/1\.0\x20400\x20Bad\x20Request\r\ncontent-length:\x200\r\n\r\n")%
+SF:r(HTTPOptions,13D0,"HTTP/1\.0\x20404\x20Not\x20Found\r\ncontent-type:\x
+SF:20text/html;\x20charset=UTF-8\r\nx-request-id:\x204254e999-ed0d-41ac-91
+SF:ac-6b7371a3d985\r\nx-runtime:\x200\.001273\r\nvary:\x20Origin\r\nconten
+SF:t-length:\x204897\r\n\r\n<!doctype\x20html>\n\n<html\x20lang=\"en\">\n\
+SF:n\x20\x20<head>\n\n\x20\x20\x20\x20<title>The\x20page\x20you\x20were\x2
+SF:0looking\x20for\x20doesn\xe2\x80\x99t\x20exist\x20\(404\x20Not\x20found
+SF:\)</title>\n\n\x20\x20\x20\x20<meta\x20charset=\"utf-8\">\n\x20\x20\x20
+SF:\x20<meta\x20name=\"viewport\"\x20content=\"initial-scale=1,\x20width=d
+SF:evice-width\">\n\x20\x20\x20\x20<meta\x20name=\"robots\"\x20content=\"n
+SF:oindex,\x20nofollow\">\n\n\x20\x20\x20\x20<style>\n\n\x20\x20\x20\x20\x
+SF:20\x20\*,\x20\*::before,\x20\*::after\x20{\n\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20box-sizing:\x20border-box;\n\x20\x20\x20\x20\x20\x20}\n\n\x20\x20\
+SF:x20\x20\x20\x20\*\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\n
+SF:\x20\x20\x20\x20\x20\x20}\n\n\x20\x20\x20\x20\x20\x20html\x20{\n\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20font-size:\x2016px;\n\x20\x20\x20\x20\x20\x20}
+SF:\n\n\x20\x20\x20\x20\x20\x20body\x20{\n\x20\x20\x20\x20\x20\x20\x20\x20
+SF:background:\x20#FFF;\n\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#261B23
+SF:;\n\x20\x20\x20\x20\x20\x20\x20\x20display:\x20grid;\n\x20\x20\x20\x20\
+SF:x20\x20\x20\x20font-family:\x20ui-sans-serif,\x20system-ui,\x20-apple-s
+SF:ystem,\x20BlinkMacSystemFont,\x20Aptos,\x20Roboto,\x20\"Segoe\x20UI\",\
+SF:x20\"Helvetica\x20Neue\",\x20Helvetica,\x20Arial,\x20sans-serif,\x20\"A
+SF:pple\x20Color\x20Emoji\",\x20\"Segoe\x20UI\x20");
+MAC Address: BC:24:11:28:21:57 (Proxmox Server Solutions GmbH)
+Device type: general purpose
+Running: Linux 4.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5
+OS details: Linux 4.15 - 5.19
+Network Distance: 1 hop
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   2.17 ms manyfold-ct (10.1.10.251)
+
+Nmap scan report for LAP11 (10.1.10.206)
+Host is up (0.00017s latency).
+All 1000 scanned ports on LAP11 (10.1.10.206) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 0 hops
+
+Nmap scan report for LAP (10.1.10.207)
+Host is up (0.000056s latency).
+All 1000 scanned ports on LAP (10.1.10.207) are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 0 hops
+
+Post-scan script results:
+| clock-skew: 
+|   0s: 
+|     10.1.10.246 (2cc548065bae)
+|_    10.1.10.98 (DESKTOP-7SRQNI1)
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Apr  7 17:41:50 2026 -- 256 IP addresses (30 hosts up) scanned in 835.92 seconds

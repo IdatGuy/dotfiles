@@ -1,0 +1,4 @@
+{
+	"CtrlH": "DeleteWordLeft",
+	"Alt-Backspace": "DeleteWordLeft"
+}
