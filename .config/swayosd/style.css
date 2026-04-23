@@ -1,12 +1,7 @@
-@define-color base    #141027;
-@define-color surface #7f06ab;
-@define-color accent  #a072b1;
-@define-color text    #94929d;
-
-window#osd {
-   #background: transparent;
-   #filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
-}
+@define-color base    #181316;
+@define-color surface #93576d;
+@define-color accent  #b99a84;
+@define-color text    #9a9097;
 
 #osd {
     background-color: alpha(@base, 0.78);

@@ -78,15 +78,6 @@ alias h='dbus-launch Hyprland'
 # DOTFILES / LAB
 alias labpush='cd ~/Documents/lab-notebook && git add . && git commit -m "update" && git push'
 
-chezpush() {
-    chezmoi re-add
-    cd ~/.local/share/chezmoi
-    git add .
-    git commit -m "${1:-dotfiles update}"
-    git push
-    cd ~
-}
-
 # FUNCTIONS
 # yazi with CWD tracking — changes shell directory on exit
 y() {
