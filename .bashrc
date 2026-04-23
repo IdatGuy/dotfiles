@@ -52,6 +52,7 @@ alias todo="micro ~/Documents/todo.txt"
 alias m="micro"
 alias Settings="micro ~/.config/hypr/hyprland.conf"
 alias brc="micro ~/.bashrc"
+alias brcl="micro ~/.bashrc.local"
 alias Steam="cd ~/.local/share/Steam/steamapps/common/"
 
 # SSH
