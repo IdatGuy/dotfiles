@@ -1,0 +1,8 @@
+[Unit]
+Description=Generate wallpaper thumbnails
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/wallpaper-thumbs
+StandardOutput=journal
+StandardError=journal

@@ -1,0 +1,26 @@
+#!/bin/bash
+WALLPAPER_DIR="$HOME/wallpapers/walls"
+THUMB_DIR="$HOME/.cache/wallpaper-thumbs"
+THUMB_SIZE=300
+
+mkdir -p "$THUMB_DIR"
+
+# Read files into an array first, avoiding the subshell issue with `find | while`
+mapfile -d '' wallpapers < <(find "$WALLPAPER_DIR" -type f \
+    \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
+
+# Generate missing/stale thumbnails in parallel — loop runs in the main shell now
+for wall in "${wallpapers[@]}"; do
+    thumb="$THUMB_DIR/$(basename "$wall").jpg"
+    if [[ ! -f "$thumb" || "$wall" -nt "$thumb" ]]; then
+        vipsthumbnail "$wall" --size ${THUMB_SIZE}x${THUMB_SIZE} -o "$thumb[Q=85]" &
+    fi
+done
+wait
+
+# Delete orphan thumbs (source file no longer exists)
+for thumb in "$THUMB_DIR"/*.jpg; do
+    [[ -f "$thumb" ]] || continue
+    src_name=$(basename "$thumb" .jpg)
+    [[ -f "$WALLPAPER_DIR/$src_name" ]] || rm "$thumb"
+done

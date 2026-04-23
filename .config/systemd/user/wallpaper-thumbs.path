@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch wallpapers folder for changes
+
+[Path]
+PathChanged=%h/wallpapers/walls
+Unit=wallpaper-thumbs.service
+
+[Install]
+WantedBy=paths.target
