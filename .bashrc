@@ -30,7 +30,7 @@ alias c='clear'
 
 # PACKAGE MANAGEMENT
 alias yeet='yay -Rns'
-alias yup='yay -Syu'
+alias yup='yay -Syu && echo "pulling dot files" && dotfiles pull'
 alias Apps='yay -Qe'
 
 cleanup() {
