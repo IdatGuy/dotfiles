@@ -70,14 +70,16 @@ alias gd='git diff'
 alias gl='git log --oneline --graph --decorate -10'
 alias gp='git push'
 alias gc='git commit -m'   # usage: gc "message"
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # FUN
 alias pool='clear && asciiquarium'
 alias h='dbus-launch Hyprland'
+alias please='sudo'
 
 # DOTFILES / LAB
 alias labpush='cd ~/Documents/lab-notebook && git add . && git commit -m "update" && git push'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotpush='dotfiles push -u origin main'
 
 # FUNCTIONS
 # yazi with CWD tracking — changes shell directory on exit
