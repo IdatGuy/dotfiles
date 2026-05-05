@@ -99,7 +99,7 @@
                 },
                 {
                     "label": "",
-                    "command": "kitty bash -i -c 'tasks'"
+                    "command": "kitty bash -i -c btm"
 
                 },
                 {
