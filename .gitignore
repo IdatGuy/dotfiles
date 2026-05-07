@@ -1,3 +1,4 @@
 .config/kitty/current-theme.conf
 .config/micro/buffers/history
 .config/cava/config
+.config/swayosd/style.css
