@@ -16,7 +16,5 @@ qogir-icon-theme
 rpcs3-bin
 seclists
 sunshine
-visual-studio-code-bin
 wlogout
 yay
-yay-debug

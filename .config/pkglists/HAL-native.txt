@@ -23,11 +23,9 @@ docker
 docker-buildx
 docker-compose
 dolphin
-dunst
 efibootmgr
 exploitdb
 eza
-fastfetch
 fd
 firefox
 gamescope
@@ -40,7 +38,6 @@ gst-plugin-pipewire
 gst-plugins-bad
 gvfs
 hashcat
-htop
 hypridle
 hyprland
 hyprlock
@@ -50,7 +47,6 @@ hyprpolkitagent
 hyprshot
 intel-media-driver
 intel-ucode
-iwd
 kitty
 less
 libpulse
@@ -61,7 +57,6 @@ libvips
 linux
 linux-firmware
 linux-headers
-mariadb
 materia-gtk-theme
 metasploit
 micro
