@@ -17,11 +17,9 @@ cowsay
 discord
 dolphin
 dosfstools
-dunst
 efibootmgr
 exfatprogs
 eza
-fastfetch
 fd
 firefox
 git
@@ -40,7 +38,6 @@ hyprpolkitagent
 hyprshot
 intel-media-driver
 intel-ucode
-iwd
 kde-cli-tools
 kitty
 less
@@ -50,7 +47,6 @@ libva-intel-driver
 libvips
 linux
 linux-firmware
-mariadb
 materia-gtk-theme
 metasploit
 micro
@@ -85,7 +81,6 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
-polkit-kde-agent
 pulsemixer
 qt5-wayland
 qt6-wayland

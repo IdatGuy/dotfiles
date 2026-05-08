@@ -14,4 +14,3 @@ seclists
 ventoy-bin
 wlogout
 yay
-yay-debug
