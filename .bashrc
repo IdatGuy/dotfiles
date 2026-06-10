@@ -30,7 +30,7 @@ alias c='clear'
 
 # PACKAGE MANAGEMENT
 alias yeet='yay -Rns'
-alias yup='sudo yay -Syu && echo "pulling dotfiles" && dotfiles pull'
+alias yup='yay -Syu && echo "pulling dotfiles" && dotfiles pull'
 alias Apps='yay -Qe'
 
 cleanup() {
@@ -105,3 +105,11 @@ newbox() {
 
 # Machine-specific overrides
 [ -f ~/.bashrc.local ] && source ~/.bashrc.local
+
+# pnpm
+export PNPM_HOME="/home/odin/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
